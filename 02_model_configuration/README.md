@@ -13,8 +13,7 @@ The Global method involves setting a default client for the entire application u
 ```python
 import os
 from dotenv import load_dotenv
-from agents import set_default_openai_client, Agent, Runner
-from openai import AsyncOpenAI
+from agents import Agent, Runner, AsyncOpenAI, set_tracing_disabled, set_default_openai_api, set_default_openai_client
 import asyncio
 
 # Load the Gemini API key
@@ -31,12 +30,14 @@ external_client = AsyncOpenAI(
 
 # Set the default client globally
 set_default_openai_client(external_client)
+set_tracing_disabled(True)
+set_default_openai_api("chat_completions")
 
 # Create the agent with a model name
 agent = Agent(
     name="Assistant",
     instructions="You are a helpful assistant.",
-    model="gemini-2.0-flash"  # Resolved using the default Gemini client
+    model="gemini-2.0-flash"  
 )
 
 async def main():
@@ -57,10 +58,9 @@ The Agent method lets you specify the model when creating an agent by passing a 
 
 ```python
 import os
+import asyncio
 from dotenv import load_dotenv
-from agents import Agent, OpenAIChatCompletionsModel
-from openai import AsyncOpenAI
-
+from agents import Agent, OpenAIChatCompletionsModel, Runner, RunConfig, AsyncOpenAI
 # Load the Gemini API key
 load_dotenv()
 gemini_api_key = os.getenv("GEMINI_API_KEY")
@@ -86,9 +86,8 @@ agent = Agent(
     model=model
 )
 
-# The agent will use the Gemini model when run
 async def main():
-    result = await Runner.run(agent, "Tell me about recursion.", run_config=config)
+    result = await Runner.run(agent, "Tell me about recursion.")
     print(result.final_output)
 
 if __name__ == "__main__":
@@ -106,8 +105,7 @@ The Run method allows you to set the model for a specific execution of an agent 
 ```python
 import os
 from dotenv import load_dotenv
-from agents import Agent, Runner, OpenAIChatCompletionsModel, RunConfig
-from openai import AsyncOpenAI
+from agents import Agent, Runner, OpenAIChatCompletionsModel, RunConfig, AsyncOpenAI
 import asyncio
 
 # Load the Gemini API key
@@ -131,7 +129,7 @@ model = OpenAIChatCompletionsModel(
 # Create the agent without a model
 agent = Agent(
     name="Assistant",
-    instructions="You are a helpful assistant."
+    instructions="You are a helpful assistant that responds in haiku."
 )
 
 # Define the RunConfig with the Gemini model
@@ -142,7 +140,7 @@ config = RunConfig(
 )
 
 async def main():
-    result = await Runner.run(agent, "Tell me about recursion.", run_config=config)
+    result = await Runner.run(agent, "Tell me about recursion.", run_config=config) # pass the config here
     print(result.final_output)
 
 if __name__ == "__main__":
