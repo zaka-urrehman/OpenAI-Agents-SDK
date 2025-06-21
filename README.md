@@ -19,4 +19,4 @@ The OpenAI Agents SDK is built with a small set of core primitives that provides
 **Tracing** is a built-in feature which allows you to visualize and debug your agent workflows. It provides detailed insights into how agents interact, which tools are being used, and where potential bottlenecks or errors occur.
 
 ### Function Tools
-***Function Tools** enable you to turn any Python function into a tool that agents can use. The SDK automatically generates the necessary schema and validation for these functions, making it easy to integrate custom functionality. This feature is powerful for extending the capabilities of your agents with minimal effort. 
+**Function Tools** enable you to turn any Python function into a tool that agents can use. The SDK automatically generates the necessary schema and validation for these functions, making it easy to integrate custom functionality. This feature is powerful for extending the capabilities of your agents with minimal effort. 
