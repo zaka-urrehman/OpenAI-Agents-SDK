@@ -26,6 +26,8 @@ Since the OpenAI API key is paid, this example uses Gemini API key to integrate 
    ```
 
 ## Usage
+In the main.py: 
+
 1. **Import necessary stuff**:
    ```python
     import os
@@ -69,7 +71,7 @@ Since the OpenAI API key is paid, this example uses Gemini API key to integrate 
    ```
    Configures the Gemini model and run settings.
 
-5. **Define and run agent**:
+5. **Define an async function to create and run Agent**:
    ```python
    async def main():
        agent = Agent(
@@ -90,3 +92,19 @@ Since the OpenAI API key is paid, this example uses Gemini API key to integrate 
     ```
 
     asyncio is used because the `Runner.run` runs the agent asynchronously by default. so we have to await it and wrap in an async function. 
+
+
+## Final Output
+Run the following command to see the output of your agent:
+```bash
+uv run python main.py
+```
+
+## Next Steps
+
+- Model configuration
+- See how streaming works. 
+- Add tools 
+- Try other queries or models.
+- See [OpenAI Agents SDK](http://openai.github.io/openai-agents-python/) and [Gemini API](https://ai.google.com/dev/ai/grok-api/docs/openai) docs.
+
