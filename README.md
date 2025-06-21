@@ -1,1 +1,2 @@
-# OpenAI-Agents-SDK
+# OpenAI Agents SDK
+Open AI Agents SDK is a lightweight and powerful framework for developing AI Agents and Multi-Agent systems. It supports both the "Chat Completions" and "Responses" API from OpenAI. It works with alot of diffenent LLMs such as Gemini, Claude, Llama etc. 
