@@ -48,4 +48,4 @@ The `handoff()` function lets you customize things.
    )
 ```
 
-[see more about customization using `handoff()`](https://openai.github.io/openai-agents-python/handoffs/#:~:text=(refund_agent)%5D)-,Customizing%20handoffs%20via%20the%20handoff()%20function,-The%20handoff())
+[see more about customization using `handoff()`](<https://openai.github.io/openai-agents-python/handoffs/#:~:text=(refund_agent)%5D)-,Customizing%20handoffs%20via%20the%20handoff()%20function,-The%20handoff()>)
