@@ -34,13 +34,13 @@ config = RunConfig(
 )
 
 @dataclass
-class WeatherInfo:
+class CityInfo:
     city: str
 
 
 
 @function_tool
-def get_weather(ctx: RunContextWrapper[WeatherInfo]) -> WeatherInfo:
+def get_weather(ctx: RunContextWrapper[CityInfo]) -> CityInfo:
     """returns the weather information of a city. requires no parameters"""
 
     cities_weather_data = [
@@ -62,15 +62,13 @@ def get_weather(ctx: RunContextWrapper[WeatherInfo]) -> WeatherInfo:
     ]
 
     for city_weather_data in cities_weather_data:
-        if city_weather_data["city"] == ctx.context.city:
-            # return city=city_weather_data["city"], temperature=city_weather_data["temperature"], description=city_weather_data["description"])
-           
+        if city_weather_data["city"] == ctx.context.city:           
             return city_weather_data
     return None
 
 
 async def main():
-    current_city = WeatherInfo(city="Karachi")
+    current_city = CityInfo(city="Karachi")
     
 
     agent = Agent(
