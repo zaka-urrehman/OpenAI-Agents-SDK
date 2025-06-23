@@ -9,7 +9,6 @@ In the OpenAI Agents SDK, you can configure the model used by your agents in thr
 The Global method involves setting a default client for the entire application using `set_default_openai_client`. This client is used to resolve model names across all agents unless overridden, making it ideal when you want all agents to default to the same provider, such as Gemini.
 
 **Example:**
-
     ```python
     import os
     from dotenv import load_dotenv
@@ -55,7 +54,6 @@ In this example, setting the default client to Gemini allows the SDK to use the 
 The Agent method lets you specify the model when creating an agent by passing a model instance. This is useful when you want a specific agent to consistently use a particular model, such as Gemini's "gemini-2.0-flash".
 
 **Example:**
-
     ```python
     import os
     import asyncio
@@ -101,7 +99,6 @@ Here, the agent is configured with a model instance tied to the Gemini API, ensu
 The Run method allows you to set the model for a specific execution of an agent by passing it in the `RunConfig` when calling `Runner.run`. This method is perfect for scenarios where you need to use different models for different runs of the same or different agents.
 
 **Example:**
-
     ```python
     import os
     from dotenv import load_dotenv
