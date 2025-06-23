@@ -30,11 +30,11 @@ In the main.py:
 
 1. **Import necessary stuff**:
    ```python
-    import os
-    from dotenv import load_dotenv
-    from agents import Agent, Runner, AsyncOpenAI, OpenAIChatCompletionsModel
-    from agents.run import RunConfig
-    import asyncio
+   import os
+   from dotenv import load_dotenv
+   from agents import Agent, Runner, AsyncOpenAI, OpenAIChatCompletionsModel
+   from agents.run import RunConfig
+   import asyncio
    ```
 
 2. **Load API key**

@@ -9,7 +9,7 @@ Handoffs are represented as tools to the LLM. So if there is a handoff to an age
 
 All agents have `handoffs` param, which can either take an Agent directly, or a `Handoff` object that customizes the Handoff. 
 
-```python
+   ```python
    billing_agent = Agent(name="Billing Agent")
    refund_agent = Agent(name="Refund Agent")
 
@@ -17,7 +17,7 @@ All agents have `handoffs` param, which can either take an Agent directly, or a 
       name = "Triage Agent",
       handoffs=[billing_agent, refund_agent]
    )
-```
+   ```
 
 In this example, the `triage_agent` assesses the user's input and delegates the task to the appropriate specialist agent.
 
@@ -31,11 +31,11 @@ Triage AI agents are artificial intelligence systems designed to assess, categor
 The `handoff()` function lets you customize things.
 
 **Example:**
-```python
+   ```python
    from agents import Agent, handoff
-   
+      
    refund_agent = Agent(name="Refund Agent")
-    
+      
    custom_handoff = handoff(
       agent = refund_agent,
       tool_name_override="custom_refund_handoff",
@@ -46,6 +46,6 @@ The `handoff()` function lets you customize things.
       name = "Triage Agent",
       handoffs=[custom_handoff]
    )
-```
+   ```
 
 [see more about customization using `handoff()`](<https://openai.github.io/openai-agents-python/handoffs/#:~:text=(refund_agent)%5D)-,Customizing%20handoffs%20via%20the%20handoff()%20function,-The%20handoff()>)
