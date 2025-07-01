@@ -1,0 +1,12 @@
+
+    digraph G {
+        graph [splines=true];
+        node [fontname="Arial"];
+        edge [penwidth=1.5];
+    "__start__" [label="__start__", shape=ellipse, style=filled, fillcolor=lightblue, width=0.5, height=0.3];"__end__" [label="__end__", shape=ellipse, style=filled, fillcolor=lightblue, width=0.5, height=0.3];"Triage Agent" [label="Triage Agent", shape=box, style=filled, fillcolor=lightyellow, width=1.5, height=0.8];"English Agent" [label="English Agent", shape=box, style=filled, style=rounded, fillcolor=lightyellow, width=1.5, height=0.8];"generate_english_joke" [label="generate_english_joke", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"French Agent" [label="French Agent", shape=box, style=filled, style=rounded, fillcolor=lightyellow, width=1.5, height=0.8];"generate_french_joke" [label="generate_french_joke", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"__start__" -> "Triage Agent";
+            "Triage Agent" -> "English Agent";
+        "English Agent" -> "generate_english_joke" [style=dotted, penwidth=1.5];
+        "generate_english_joke" -> "English Agent" [style=dotted, penwidth=1.5];"English Agent" -> "__end__";
+            "Triage Agent" -> "French Agent";
+        "French Agent" -> "generate_french_joke" [style=dotted, penwidth=1.5];
+        "generate_french_joke" -> "French Agent" [style=dotted, penwidth=1.5];"French Agent" -> "__end__";}
